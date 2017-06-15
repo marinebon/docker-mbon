@@ -1,5 +1,5 @@
 FROM rocker/verse:3.4.0
-## source: https://github.com/rocker-org/geospatial/blob/854ea590820c5d4f1d33f95e6c341ebb18f6884a/3.4.0/Dockerfile
+## mbon: source: https://github.com/rocker-org/geospatial/blob/854ea590820c5d4f1d33f95e6c341ebb18f6884a/3.4.0/Dockerfile
 MAINTAINER "Carl Boettiger" cboettig@ropensci.org
 
 ENV GDAL_VERSION 2.1.3
@@ -95,5 +95,5 @@ RUN apt-get update \
     ## from bioconductor
     && R -e "BiocInstaller::biocLite('rhdf5')"
 
-## add Shiny, per https://github.com/rocker-org/rocker/issues/235#issuecomment-299036810
+## mbon: add Shiny, per https://github.com/rocker-org/rocker/issues/235#issuecomment-299036810
 RUN export ADD=shiny && bash /etc/cont-init.d/add
